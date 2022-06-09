@@ -16,7 +16,6 @@ import javax.persistence.Id;
 @Entity
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
     private Long id;
     private String name;
     private String brand;
@@ -24,9 +23,14 @@ public class Product implements Serializable {
     private float price;
     
     protected Product() {
-        super();
     }
     
+    
+    //@GeneratedValue(stra)
+    @Id
+    public Long getId() {
+        return id;
+    }
     
     public void setId(Long id) {
         this.id = id;
@@ -48,9 +52,7 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Long getId() {
-        return id;
-    }
+    
 
     public String getName() {
         return name;
